@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "255999044601",
+    "project_id": "barbarapp-2e21f",
+    "storage_bucket": "barbarapp-2e21f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255999044601:android:57647e3d453257c3d32b28",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_barber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255999044601-48ono80gijp097veasr1j06kfcp43v5e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_application_barber",
+            "certificate_hash": "fa8f5b176fd305eda4808dad5c9968843f273526"
+          }
+        },
+        {
+          "client_id": "255999044601-lrq8h0r7joskrt8bgjs6o1nch2e5hqe4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_HZGgQ6M7Hwo8Txrdot0R_6BY2Kv2JHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255999044601-lrq8h0r7joskrt8bgjs6o1nch2e5hqe4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
