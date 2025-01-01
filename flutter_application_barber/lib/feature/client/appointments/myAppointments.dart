@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_barber/feature/client/appointments/myAppointmentList.dart';
 
-class Myappointments extends StatefulWidget {
-  const Myappointments({super.key});
+
+class MyAppointments extends StatefulWidget {
+  const MyAppointments({super.key});
 
   @override
-  State<Myappointments> createState() => _MyappointmentsState();
+  _MyAppointmentsState createState() => _MyAppointmentsState();
 }
 
-class _MyappointmentsState extends State<Myappointments> {
+class _MyAppointmentsState extends State<MyAppointments> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('myAppointments')),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'مواعيد الحجز',
+        ),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(10),
+        child: MyAppointmentList(),
+      ),
     );
   }
 }

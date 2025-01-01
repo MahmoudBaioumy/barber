@@ -1,9 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_barber/core/utils/AppColor.dart';
 import 'package:flutter_application_barber/core/utils/text_styles.dart';
 import 'package:flutter_application_barber/feature/client/Home/presentaion/view/client_view.dart';
 import 'package:flutter_application_barber/feature/client/appointments/myAppointments.dart';
-import 'package:flutter_application_barber/feature/client/profile/presention/view/client_profile.dart';
+import 'package:flutter_application_barber/feature/client/profile/pages/client_profile.dart';
 import 'package:flutter_application_barber/feature/client/search/presentaion/view/search_view.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -20,9 +21,21 @@ class _NavBar_clientState extends State<NavBar_client> {
   final List _pages = [
     const ClientView(),
     const SearchView(),
-    const Myappointments(),
+    const MyAppointments(),
     const ClientProfile(),
   ];
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  User? user;
+  Future<void> _getUser() async {
+    user = _auth.currentUser;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_barber/core/enum/user_type_enum.dart';
 import 'package:flutter_application_barber/core/function/routing.dart';
 import 'package:flutter_application_barber/core/utils/AppColor.dart';
 import 'package:flutter_application_barber/core/utils/text_styles.dart';
@@ -73,7 +74,11 @@ class _WelcomeBodyViewState extends State<WelcomeBodyView> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            push(context, const LoginView(index: 0));
+                            push(
+                                context,
+                                const LoginView(
+                                  index: 0,
+                                ));
                           },
                           child: Container(
                             height: 70,
@@ -93,7 +98,11 @@ class _WelcomeBodyViewState extends State<WelcomeBodyView> {
                         const Gap(10),
                         GestureDetector(
                           onTap: () {
-                            push(context, const LoginView(index: 1));
+                            push(
+                                context,
+                                const LoginView(
+                                  index: 1,
+                                ));
                           },
                           child: Container(
                             height: 70,

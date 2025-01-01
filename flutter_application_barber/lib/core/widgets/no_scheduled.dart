@@ -13,8 +13,8 @@ class NoScheduledWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset('assets/no_scheduled.svg', width: 250),
-          Text('لا يوجد حجوزات قادمة', style: getBodystyle()),
+          SvgPicture.asset('assets/no_scheduled owner.svg', width: 250),
+          Text('لا يوجد حجوزات لديك', style: getBodystyle()),
         ],
       ),
     );

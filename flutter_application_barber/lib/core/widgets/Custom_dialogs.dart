@@ -1,5 +1,7 @@
 // error
 import 'package:flutter/material.dart';
+import 'package:flutter_application_barber/core/utils/AppColor.dart';
+import 'package:flutter_application_barber/core/utils/text_styles.dart';
 import 'package:lottie/lottie.dart';
 
 showErrorDialog(context, errorText) {
@@ -72,4 +74,8 @@ showLoadingDialog(BuildContext context) {
   //     );
   //   },
   // );
+
+
+  
+
 }

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_barber/core/utils/text_styles.dart';
 import 'package:flutter_application_barber/core/widgets/barbers_Card.dart';
+import 'package:flutter_application_barber/feature/owner/profile/presentaion/owner_profile.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SearchList extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SearchListState extends State<SearchList> {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: FirebaseFirestore.instance
-          .collection('doctor')
+          .collection('Owner')
           .orderBy('name')
           .startAt([widget.searchKey]).endAt(
               ['${widget.searchKey}\uf8ff']).snapshots(),
@@ -39,7 +40,7 @@ class _SearchListState extends State<SearchList> {
                         width: 250,
                       ),
                       Text(
-                        'لا يوجد خلاق بهذا الاسم',
+                        'لا يوجد حلاق بهذا الاسم',
                         style: getBodystyle(),
                       ),
                     ],
@@ -50,40 +51,22 @@ class _SearchListState extends State<SearchList> {
                 child: ListView.builder(
                   itemCount: snapshot.data?.docs.length,
                   itemBuilder: (context, index) {
-                    DocumentSnapshot doctor = snapshot.data!.docs[index];
-                    if (doctor['name'] == null ||
-                        doctor['image'] == null ||
-                        doctor['specialization'] == null ||
-                        doctor['rating'] == null) {
+                    DocumentSnapshot owner = snapshot.data!.docs[index];
+                    if (owner['name'] == null ||
+                        owner['image'] == null ||
+                        owner['rating'] == null) {
                       return const SizedBox();
                     }
                     return BarbersCard(
-                        name: doctor['name'],
-                        image: doctor['image'],
-                        specialization: doctor['specialization'],
-                        rating: doctor['rating'],
+                        name: owner['name'],
+                        image: owner['image'],
+                        rating: owner['rating'],
                         onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => ClientProfile(
-                          //        doctor:  DoctorModel(
-                          //           id: doctor.id,
-                          //           name: doctor['name'],
-                          //           image: doctor['image'],
-                          //           specialization: doctor['specialization'],
-                          //           rating: doctor['rating'],
-                          //           email: doctor['email'],
-                          //           phone1: doctor['phone1'],
-                          //           phone2: doctor['phone2'],
-                          //           bio: doctor['bio'],
-                          //           openHour: doctor['openHour'],
-                          //           closeHour: doctor['closeHour'],
-                          //           address: doctor['address'],
-                          //         ),
-                          //     ),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const OwnerProfile()),
+                          );
                         });
                   },
                 ),

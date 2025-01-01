@@ -5,7 +5,7 @@ import 'package:flutter_application_barber/feature/client/search/presentaion/wid
 import 'package:flutter_svg/svg.dart';
 
 class SearchView extends StatefulWidget {
-  const SearchView({super.key});
+  const SearchView({super.key,});
 
   @override
   State<SearchView> createState() => _SearchViewState();
@@ -16,6 +16,11 @@ class _SearchViewState extends State<SearchView> {
   String search = '';
   int _length = 0;
   @override
+   void initState() {
+    super.initState();
+    search = _textController.text;
+    _length = search.length;
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

@@ -8,13 +8,11 @@ class BarbersCard extends StatelessWidget {
       {super.key,
       required this.name,
       required this.image,
-      required this.specialization,
       required this.rating,
       required this.onPressed});
 
   final String name;
   final String image;
-  final String specialization;
   final int rating;
   final Function()? onPressed;
   @override
@@ -74,14 +72,10 @@ class BarbersCard extends StatelessWidget {
                         maxLines: 1,
                         style: getTitelstyle(fontSize: 16),
                       ),
-                      Text(
-                        specialization,
-                        style: getBodystyle(),
-                      ),
                     ],
                   ),
                 ),
-                Gap(10),
+                const Gap(10),
                 Container(
                   alignment: Alignment.centerRight,
 

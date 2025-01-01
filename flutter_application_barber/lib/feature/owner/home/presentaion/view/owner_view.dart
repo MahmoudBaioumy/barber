@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_barber/core/utils/AppColor.dart';
 import 'package:flutter_application_barber/core/utils/text_styles.dart';
@@ -13,6 +14,17 @@ class OwnerView extends StatefulWidget {
 
 class _OwnerViewState extends State<OwnerView> {
   @override
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  User? user;
+  Future<void> _getUser() async {
+    user = _auth.currentUser;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getUser();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -47,7 +59,7 @@ class _OwnerViewState extends State<OwnerView> {
                     style: getBodystyle(fontSize: 22),
                   ),
                   TextSpan(
-                    text: 'محمود بيومي',
+                    text: user?.displayName,
                     style: getTitelstyle(fontSize: 22),
                   ),
                 ],
